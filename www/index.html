@@ -38,7 +38,7 @@
 </script>
          <script>
             var company_name="BodyShush"; //The Company/organisation name
-            var home_blurb="To get started, clickm on a section below..."; //The home page summary below the logo
+            var home_blurb="To get started, click on a section below..."; //The home page summary below the logo
             var main_logo_src="images/logo.png"; //Location of the company logo (should be "images/logo.[png/jpg]" by default
             var logo_header="Natural Handmade Soaps"; //If the logo needs any text displaying below it.. this is where to put that!
             var phone="01524417328"; //Main phone number for the company
@@ -47,7 +47,7 @@
              var prodimg="width:90%; height:90%; display: block; margin-left: auto; margin-right: auto; max-height:150px; max-width:150px;";
             var logo_header_style="color:gray;";
              
-             var theme="f";
+             var theme="a";//was f
             
             //THESE APPEAR ON NAVIGATION BARS (KEEP SHORT-ISH)
             var nav1="Home";
@@ -161,7 +161,13 @@
 $(document).on("pageshow", "#map", function() //Change #map to map page name 
             {
                 initialize();
-                $("#map_wrapper").css('height',(window.innerHeight-155));
+                $(".map_wrapper").css('height',(window.innerHeight-155));
+            });
+             
+             $(document).on("pageshow", "#web", function() //Change #map to map page name 
+            {
+                initialize();
+                $(".map_wrapper").css('height',(window.innerHeight-155));
             });
              
         </script>
@@ -212,14 +218,14 @@ $("body").append('');
         <div data-role="page" id="home" class="page"><!-- page -->
             <div data-theme="a" data-role="header" data-position="fixed" data-nobackbtn="true" class="ui-nodisc-icon" data-tap-toggle="false"><!--header -->
                <div align="center">
-                <h3>Home</h3>
+                <img src="images/logo.png" style="height:50px; max-width:50%; padding-top:17px;"  />
                 </div>
                     <a href="#home-menu" data-icon="bars" data-iconpos="notext" data-theme="a" data-shadow="false" data-iconshadow="false" class="ui-icon-right"></a>
             </div><!-- /header -->
             <div data-role="content" data-iscroll><!-- content -->
                
                 <div> <!--LOGO-->
-                <img class="main_logo"/>
+                <img src="images/5.jpg" style="width:75%; display: block; margin-left: auto; margin-right: auto; max-height:500px; max-width:333px;"/>
                 <h1 align="center" class="logo_header"></h1>
                 </div>
                
@@ -296,7 +302,7 @@ $("body").append('');
             
             <div data-theme="a" data-role="header" data-position="fixed" data-nobackbtn="true" class="ui-nodisc-icon" data-tap-toggle="false"><!--header -->
                 <div align="center">
-                <h3 id="nav2_header"></h3>
+                <img src="images/logo.png" style="height:62px; max-width:50%;"  />
                 </div>
                 <a data-rel="back" data-icon="carat-l" data-iconpos="notext" data-theme="a"  data-shadow="false"  data-iconshadow="false"  data-inline="true"></a>
                 
@@ -306,9 +312,9 @@ $("body").append('');
             <div data-role="content" data-iscroll><!-- content -->
                
                 <div> <!--LOGO-->
-                <img class="main_logo" style="width=100%; height: 250px; display: block; margin-left: auto; margin-right: auto;"/>
+                <img src="images/4.jpg" style="width=90%; max-height:400px; max-width:90%; display: block; margin-left: auto; margin-right: auto;"/>
                 </div>
-               
+               <br/>
                 <p id="nav2_content" align="center"></p>
                 
                 <div id="timeContent"></div>
@@ -374,7 +380,7 @@ $("body").append('');
             
             <div data-theme="a" data-role="header" data-position="fixed" data-nobackbtn="true" class="ui-nodisc-icon" data-tap-toggle="false" ><!-- header -->
                  <div align="center">
-                <h3 id="nav3_header"></h3>
+                <img src="images/logo.png" style="height:62px; max-width:50%;"  />
                 </div>
                 <a data-rel="back" data-icon="carat-l" data-iconpos="notext" data-theme="a"  data-shadow="false"  data-iconshadow="false"  data-inline="true"></a>
                 
@@ -389,7 +395,7 @@ $("body").append('');
                 <div class="ui-body">
                     <div class="prodimgwrap"><img src="images/1.jpg" class="prodimg"/></div>
                     <h3>Organic Soaps</h3>
-                    <a href="http://www.bodyshush.co.uk/natural-handmade-organic-soaps" data-role="button" data-icon="tag" rel="external" class="ui-nodisc-icon">Buy Now</a>
+                    <a href="#" onclick="window.open('http://www.bodyshush.co.uk/natural-handmade-organic-soaps', '_system');" data-role="button" data-icon="tag" rel="external" class="ui-nodisc-icon">Buy Now</a>
                 </div>
             </div>
             
@@ -525,7 +531,7 @@ $("body").append('');
             
             <div data-theme="a" data-role="header" data-position="fixed" data-nobackbtn="true" class="ui-nodisc-icon" data-tap-toggle="false" ><!-- header -->
                  <div align="center">
-                <h3 id="nav4_header"></h3>
+                <img src="images/logo.png" style="height:62px; max-width:50%;"  />
                 </div>
                 <a data-rel="back" data-icon="carat-l" data-iconpos="notext" data-theme="a"  data-shadow="false"  data-iconshadow="false"  data-inline="true"></a>
                 
@@ -598,7 +604,7 @@ $("body").append('');
             
             <div data-role="header" data-position="fixed" data-nobackbtn="true" class="ui-nodisc-icon" data-tap-toggle="false" ><!-- header -->
                  <div align="center">
-                <h3 id="nav5_header"></h3>
+                <img src="images/logo.png" style="height:62px; max-width:50%;"  />
                 </div>
                 <a data-rel="back" data-icon="carat-l" data-iconpos="notext"  data-shadow="false"  data-iconshadow="false"  data-inline="true"></a>
                 
@@ -608,7 +614,7 @@ $("body").append('');
             <div data-role="content" data-iscroll><!-- content -->
                
                 
-              <div id="map_wrapper">
+              <div class="map_wrapper">
                     <div id="map_canvas"></div>
                 </div>   
                 
@@ -674,7 +680,7 @@ $("body").append('');
             
             <div data-theme="a" data-role="header" data-position="fixed" data-nobackbtn="true" class="ui-nodisc-icon" data-tap-toggle="false" ><!-- header -->
                  <div align="center">
-                <h3>www.bodyshush.co.uk</h3>
+                <img src="images/logo.png" style="height:62px; max-width:50%;"  />
                 </div>
                 <a data-rel="back" data-icon="carat-l" data-iconpos="notext" data-theme="a"  data-shadow="false"  data-iconshadow="false"  data-inline="true"></a>
                
@@ -682,7 +688,7 @@ $("body").append('');
             
             <div data-role="content"><!-- content -->
                
-               <div id="map_wrapper"> 
+               <div class="map_wrapper"> 
               <iframe src="http://www.bodyshush.co.uk" style="width:100%; height:100%;"></iframe>  
                 </div>
                 
@@ -775,10 +781,10 @@ $("body").append('');
             $(".prodimg").attr("style", prodimg);
             $(".prodimgwrap").attr("style", "height: 150px;");
             
-            document.getElementById("nav2_header").innerHTML=nav2_header;
-            document.getElementById("nav3_header").innerHTML=nav3_header;
-            document.getElementById("nav4_header").innerHTML=nav4_header;
-            document.getElementById("nav5_header").innerHTML=nav5_header;
+            //document.getElementById("nav2_header").innerHTML=nav2_header;
+            //document.getElementById("nav3_header").innerHTML=nav3_header;
+            //document.getElementById("nav4_header").innerHTML=nav4_header;
+            //document.getElementById("nav5_header").innerHTML=nav5_header;
             
              document.getElementById("nav2_content").innerHTML=nav2_content;
 
