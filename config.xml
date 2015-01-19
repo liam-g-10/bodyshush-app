@@ -37,7 +37,7 @@
   <gap:plugin name="org.apache.cordova.network-information"/>
   <gap:plugin name="org.apache.cordova.splashscreen"/>
   <gap:plugin name="org.apache.cordova.vibration"/>
-    <gap:plugin name="org.apache.cordova.pushplugin " />
+    <gap:plugin name="com.phonegap.plugins.pushplugin" />
 <feature name="InAppBrowser">
     <param name="ios-package" value="CDVInAppBrowser" />
 </feature>
