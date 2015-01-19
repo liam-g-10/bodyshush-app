@@ -18,7 +18,8 @@
         <script type="text/javascript" src="vendors/iscroll.js"></script>
         <script type="text/javascript" src="vendors/jquery.mobile.iscrollview.js"></script>
         <script type="text/javascript" src="vendors/jquery.mobile-1.4.2.min.js"></script>
-        <script type="text/javascript" src="vendors/cordova.js"></script>#
+        <script type="text/javascript" src="vendors/cordova.js"></script>
+        <script type="text/javascript" charset="utf-8" src="vendors/PushNotification.js"></script>
         <script>if (navigator.userAgent === undefined) {
   navigator.__defineGetter__('userAgent', function() {
     return("Mozilla/5.0 (iPhone; CPU iPhone OS 8_0 like Mac OS X) AppleWebKit");
@@ -206,6 +207,58 @@ $("body").append('');
 });}
 
 
+        try 
+				{ 
+                	pushNotification = window.plugins.pushNotification;
+                	if (device.platform == 'android' || device.platform == 'Android' ||
+                            device.platform == 'amazon-fireos' ) {
+			pushNotification.register(successHandler, errorHandler, {"senderID":"319744622407","ecb":"onNotification"});		// required!
+					} else {
+                    	pushNotification.register(tokenHandler, errorHandler, {"badge":"true","sound":"true","alert":"true","ecb":"onNotificationAPN"});	// required!
+                	}
+                }
+				catch(err) 
+				{ 
+					txt="There was an error on this page.\n\n"; 
+					txt+="Error description: " + err.message + "\n\n"; 
+					alert(txt); 
+				} 
+            
+            /**
+ * Success handler for when connected to push server
+ * @param result
+ */
+var pushSuccessHandler = function(result)
+{
+    console.log(result);
+};
+ 
+/**
+ * Error handler for when not connected to push server
+ * @param error
+ */
+var pushErrorHandler = function(error)
+{
+    console.log(error);
+};
+ 
+/**
+ * Notification from Android GCM
+ * @param e
+ */
+var onNotificationGCM = function(e)
+{
+    // Check which event:
+    switch(e.event)
+    {
+        case 'registered' :
+        {
+            alert('android reg id: ' + e.regid);
+            break;
+        }
+    }
+};
+
     </script>   
 
     </head>
@@ -302,7 +355,7 @@ $("body").append('');
             
             <div data-theme="a" data-role="header" data-position="fixed" data-nobackbtn="true" class="ui-nodisc-icon" data-tap-toggle="false"><!--header -->
                 <div align="center">
-                <img src="images/logo.png" style="height:62px; max-width:50%;"  />
+                <img src="images/logo.png" style="height:62px; max-width:50%; padding-top:17px;"  />
                 </div>
                 <a data-rel="back" data-icon="carat-l" data-iconpos="notext" data-theme="a"  data-shadow="false"  data-iconshadow="false"  data-inline="true"></a>
                 
@@ -380,7 +433,7 @@ $("body").append('');
             
             <div data-theme="a" data-role="header" data-position="fixed" data-nobackbtn="true" class="ui-nodisc-icon" data-tap-toggle="false" ><!-- header -->
                  <div align="center">
-                <img src="images/logo.png" style="height:62px; max-width:50%;"  />
+                <img src="images/logo.png" style="height:62px; max-width:50%; padding-top:17px;"  />
                 </div>
                 <a data-rel="back" data-icon="carat-l" data-iconpos="notext" data-theme="a"  data-shadow="false"  data-iconshadow="false"  data-inline="true"></a>
                 
@@ -531,7 +584,7 @@ $("body").append('');
             
             <div data-theme="a" data-role="header" data-position="fixed" data-nobackbtn="true" class="ui-nodisc-icon" data-tap-toggle="false" ><!-- header -->
                  <div align="center">
-                <img src="images/logo.png" style="height:62px; max-width:50%;"  />
+                <img src="images/logo.png" style="height:62px; max-width:50%; padding-top:17px;"  />
                 </div>
                 <a data-rel="back" data-icon="carat-l" data-iconpos="notext" data-theme="a"  data-shadow="false"  data-iconshadow="false"  data-inline="true"></a>
                 
@@ -604,7 +657,7 @@ $("body").append('');
             
             <div data-role="header" data-position="fixed" data-nobackbtn="true" class="ui-nodisc-icon" data-tap-toggle="false" ><!-- header -->
                  <div align="center">
-                <img src="images/logo.png" style="height:62px; max-width:50%;"  />
+                <img src="images/logo.png" style="height:62px; max-width:50%; padding-top:17px;"  />
                 </div>
                 <a data-rel="back" data-icon="carat-l" data-iconpos="notext"  data-shadow="false"  data-iconshadow="false"  data-inline="true"></a>
                 
@@ -680,7 +733,7 @@ $("body").append('');
             
             <div data-theme="a" data-role="header" data-position="fixed" data-nobackbtn="true" class="ui-nodisc-icon" data-tap-toggle="false" ><!-- header -->
                  <div align="center">
-                <img src="images/logo.png" style="height:62px; max-width:50%;"  />
+                <img src="images/logo.png" style="height:62px; max-width:50%; padding-top:17px;"  />
                 </div>
                 <a data-rel="back" data-icon="carat-l" data-iconpos="notext" data-theme="a"  data-shadow="false"  data-iconshadow="false"  data-inline="true"></a>
                
