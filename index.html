@@ -209,10 +209,10 @@ $("body").append('');
 
         try 
 				{ 
-                	pushNotification = window.plugins.pushNotification;
+                	var pushNotification = window.plugins.pushNotification;
                 	if (device.platform == 'android' || device.platform == 'Android' ||
                             device.platform == 'amazon-fireos' ) {
-			pushNotification.register(successHandler, errorHandler, {"senderID":"319744622407","ecb":"onNotification"});		// required!
+			pushNotification.register(pushSuccessHandler, pushErrorHandler, {"senderID":"319744622407","ecb":"onNotificationGCM"});		// required!
 					} else {
                     	pushNotification.register(tokenHandler, errorHandler, {"badge":"true","sound":"true","alert":"true","ecb":"onNotificationAPN"});	// required!
                 	}
