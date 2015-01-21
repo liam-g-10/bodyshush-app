@@ -37,8 +37,8 @@
   <gap:plugin name="org.apache.cordova.network-information"/>
   <gap:plugin name="org.apache.cordova.splashscreen"/>
   <gap:plugin name="org.apache.cordova.vibration"/>
-	<gap:plugin name="PushPlugin"/>
-<feature name="http://api.phonegap.com/1.0/device" />
+  <gap:plugin name="com.phonegap.plugins.pushplugin"/>
+
         
 
 
